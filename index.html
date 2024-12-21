@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-app">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <img src="./asset/images/logo.png" alt="">
+            <h2>Hello Learners!</h2>
+            <h3>Enter your name and choose a category to begin.</h3>
+            <form onsubmit="return getUsername(event)">
+                <input type="text" id="username" placeholder="Enter Your Name" required>
+                <button type="submit">Enter</button>
+            </form>
+            <p id="welcome-note"></p>
+       
+       <p style="color: gray;">You'll have 15 seconds to answer each question.</p><hr>
+       <br>
+       <h2>Select Category</h2>
+    
+            <div class="category-buttons">
+                <button onclick="selectCategory('HTML')">HTML</button>
+                <button onclick="selectCategory('CSS')">CSS</button>
+                <button onclick="selectCategory('JavaScript')">JavaScript</button>
+                <button onclick="selectCategory('React')">React</button>
+            </div>
+        </div>
+
+        <!-- Questions Screen -->
+        <div id="quiz-container" style="display: none;">
+            <h1 id="category-title"></h1>
+            <p id="question-number"></p> 
+           
+            <div class="info">
+                <p>Time Left: <span id="timer">15</span>s</p>
+            </div>
+            <div id="question-container"></div>
+            <div id="option-container"></div>
+            <div class="navigation">
+                <button onclick="prevQuestion()">Previous</button>
+                <button onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen">
+            <h2>Quiz Completed!</h2><br>
+            <h4 style="color: #0056b3;">Your Final Score is: <span id="final-score"></span></h4><br>
+            <button id="home" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+  
+<script src="script.js"></script>
+</body>
+</html>
